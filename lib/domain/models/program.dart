@@ -13,7 +13,8 @@ enum Program {
   speciality('Speciality'),
 
   /// Stamina — endurance-focused programming.
-  stamina('Stamina');
+  stamina('Stamina')
+  ;
 
   const Program(this.label);
 

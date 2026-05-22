@@ -7,16 +7,13 @@ class Log {
   const Log._();
 
   /// Debug-level message.
-  static void d(String message) =>
-      dev.log(message, level: 500, name: 'vogue');
+  static void d(String message) => dev.log(message, level: 500, name: 'vogue');
 
   /// Informational message.
-  static void i(String message) =>
-      dev.log(message, level: 800, name: 'vogue');
+  static void i(String message) => dev.log(message, level: 800, name: 'vogue');
 
   /// Warning — recoverable, but worth noticing.
-  static void w(String message) =>
-      dev.log(message, level: 900, name: 'vogue');
+  static void w(String message) => dev.log(message, level: 900, name: 'vogue');
 
   /// Error — something failed.
   static void e(String message, [Object? error, StackTrace? stackTrace]) =>

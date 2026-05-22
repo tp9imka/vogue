@@ -35,9 +35,9 @@ abstract class WodLocalCache {
 }
 
 String _encode(List<Wod> wods) => jsonEncode({
-      'fetchedAt': DateTime.now().toIso8601String(),
-      'wods': wods.map((w) => w.toJson()).toList(),
-    });
+  'fetchedAt': DateTime.now().toIso8601String(),
+  'wods': wods.map((w) => w.toJson()).toList(),
+});
 
 CacheSnapshot? _decode(String? raw) {
   if (raw == null || raw.isEmpty) return null;

@@ -13,7 +13,9 @@ void main() {
         date: DateTime(2026, 5, 22),
         branch: Branch.jlt,
         program: Program.metcon,
-        sections: const [WodSection(lines: ['row'])],
+        sections: const [
+          WodSection(lines: ['row']),
+        ],
       ),
     ];
     await cache.write(wods);

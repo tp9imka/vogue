@@ -21,10 +21,9 @@ sealed class AppFailure with _$AppFailure {
 /// Human-readable copy for a failure, used by the UI error states.
 extension AppFailureMessage on AppFailure {
   String get message => switch (this) {
-        NetworkFailure() =>
-          "Couldn't reach Vogue Fitness. Check your connection and retry.",
-        ParseFailure() =>
-          'The schedule page changed shape and could not be read.',
-        CacheFailure() => 'Stored schedule could not be loaded.',
-      };
+    NetworkFailure() =>
+      "Couldn't reach Vogue Fitness. Check your connection and retry.",
+    ParseFailure() => 'The schedule page changed shape and could not be read.',
+    CacheFailure() => 'Stored schedule could not be loaded.',
+  };
 }

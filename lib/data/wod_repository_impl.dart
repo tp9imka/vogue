@@ -12,8 +12,8 @@ class WodRepositoryImpl implements WodRepository {
   WodRepositoryImpl({
     required WodRemoteSource remote,
     required WodLocalCache cache,
-  })  : _remote = remote,
-        _cache = cache;
+  }) : _remote = remote,
+       _cache = cache;
 
   final WodRemoteSource _remote;
   final WodLocalCache _cache;

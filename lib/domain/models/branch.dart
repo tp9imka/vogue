@@ -28,7 +28,8 @@ enum Branch {
   saadiyat('Saadiyat', 'Abu Dhabi'),
 
   /// Stamina.
-  stamina('Stamina', 'Abu Dhabi');
+  stamina('Stamina', 'Abu Dhabi')
+  ;
 
   const Branch(this.displayName, this.city);
 

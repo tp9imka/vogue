@@ -92,8 +92,10 @@ _Desc _parseDescription(Element? descEl) {
     if (kept.length == 1 && _looksLikeHeading(kept.first)) {
       sections.add(WodSection(title: kept.first, lines: const []));
     } else if (sections.isNotEmpty && sections.last.lines.isEmpty) {
-      sections[sections.length - 1] =
-          WodSection(title: sections.last.title, lines: kept);
+      sections[sections.length - 1] = WodSection(
+        title: sections.last.title,
+        lines: kept,
+      );
     } else {
       sections.add(WodSection(lines: kept));
     }
