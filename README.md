@@ -62,9 +62,22 @@ bash tool/dev/check.sh             # prints ALL GREEN
 | `tool/dev/check.sh` | Local CI mirror. |
 | `docs/superpowers/` | The design spec and implementation plan. |
 
+## Releasing
+
+The app is configured for release: app icon, splash, display name, an
+Android upload-signing config, and the iOS export-compliance declaration.
+See [`RELEASE.md`](RELEASE.md) for the full publishing runbook.
+
+```bash
+flutter build appbundle --release   # Android → Google Play (.aab)
+flutter build ipa --release         # iOS → App Store (.ipa)
+```
+
 ## Documentation
 
 - [`AGENTS.md`](AGENTS.md) — conventions every contributor follows.
 - [`DESIGN.md`](DESIGN.md) — the design-system reference.
+- [`RELEASE.md`](RELEASE.md) — build & publishing runbook.
+- [`PRIVACY.md`](PRIVACY.md) — the app's privacy policy.
 - [`docs/superpowers/specs/`](docs/superpowers/specs/) — the design spec.
 - [`docs/superpowers/plans/`](docs/superpowers/plans/) — the implementation plan.

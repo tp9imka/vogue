@@ -70,8 +70,9 @@ Future<void> _render(
 
   final image = await recorder.endRecording().toImage(size, size);
   final data = await image.toByteData(format: ui.ImageByteFormat.png);
-  final file = File(path)..parent.createSync(recursive: true);
-  file.writeAsBytesSync(data!.buffer.asUint8List());
+  File(path)
+    ..parent.createSync(recursive: true)
+    ..writeAsBytesSync(data!.buffer.asUint8List());
 }
 
 void main() {
