@@ -43,3 +43,10 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Release signing — NEVER commit these. Back them up securely; losing
+# the keystore means you can never update the published app.
+/android/key.properties
+/android/app/upload-keystore.jks
+*.jks
+*.keystore
