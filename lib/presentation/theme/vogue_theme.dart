@@ -142,8 +142,9 @@ ThemeData _themeFrom({
       selectedColor: colorScheme.primary,
       side: BorderSide(color: colorScheme.outline),
       labelStyle: VogueTypography.label.copyWith(color: primaryText),
-      secondaryLabelStyle:
-          VogueTypography.label.copyWith(color: colorScheme.onPrimary),
+      secondaryLabelStyle: VogueTypography.label.copyWith(
+        color: colorScheme.onPrimary,
+      ),
       padding: const EdgeInsets.symmetric(
         horizontal: VogueSpace.md,
         vertical: VogueSpace.sm,
