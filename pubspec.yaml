@@ -1,7 +1,7 @@
 name: vogue_wod
 description: "Vogue WOD — daily workout viewer for Vogue Fitness UAE branches."
 publish_to: 'none'
-version: 0.1.0+1
+version: 1.0.0+1
 
 environment:
   sdk: ^3.11.5
@@ -28,6 +28,25 @@ dev_dependencies:
   json_serializable: ^6.8.0
   bloc_test: ^10.0.0
   mocktail: ^1.0.4
+  flutter_launcher_icons: ^0.14.1
+  flutter_native_splash: ^2.4.3
 
 flutter:
   uses-material-design: true
+
+# App launcher icons — run: dart run flutter_launcher_icons
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/brand/icon.png"
+  adaptive_icon_background: "#0C0E11"
+  adaptive_icon_foreground: "assets/brand/icon_foreground.png"
+  remove_alpha_ios: true
+
+# Native splash screen — run: dart run flutter_native_splash:create
+flutter_native_splash:
+  color: "#0C0E11"
+  image: "assets/brand/splash.png"
+  android_12:
+    color: "#0C0E11"
+    image: "assets/brand/splash.png"
