@@ -85,11 +85,13 @@ class _ReadyView extends StatelessWidget {
   Widget _branchList(BuildContext context, List<Wod> wods) {
     return ListView(
       physics: const AlwaysScrollableScrollPhysics(),
-      padding: const EdgeInsets.fromLTRB(
+      // Pad past the Android system nav bar so the last branch group
+      // stays fully visible when scrolled to the end.
+      padding: EdgeInsets.fromLTRB(
         VogueSpace.lg,
         VogueSpace.sm,
         VogueSpace.lg,
-        VogueSpace.xxl,
+        VogueSpace.xxl + MediaQuery.viewPaddingOf(context).bottom,
       ),
       children: [
         for (final branch in Branch.values)

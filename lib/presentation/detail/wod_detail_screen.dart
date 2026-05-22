@@ -24,7 +24,14 @@ class WodDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(wod.branch.displayName)),
       body: ListView(
-        padding: const EdgeInsets.all(VogueSpace.lg),
+        // Pad past the Android system nav bar so the last lines of the
+        // workout stay fully visible when scrolled to the end.
+        padding: EdgeInsets.fromLTRB(
+          VogueSpace.lg,
+          VogueSpace.lg,
+          VogueSpace.lg,
+          VogueSpace.lg + MediaQuery.viewPaddingOf(context).bottom,
+        ),
         children: [
           Row(
             children: [
