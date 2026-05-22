@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The app fetches the WOD schedule from vfuae.com over HTTPS. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="vogue_wod"
         android:name="${applicationName}"
