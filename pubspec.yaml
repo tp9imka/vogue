@@ -1,7 +1,7 @@
 name: vogue_wod
 description: "Vogue WOD — daily workout viewer for Vogue Fitness UAE branches."
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.1.0+2
 
 environment:
   sdk: ^3.11.5
@@ -18,6 +18,8 @@ dependencies:
   path_provider: ^2.1.4
   intl: ^0.20.0
   go_router: ^16.0.0
+  wakelock_plus: ^1.2.8
+  share_plus: ^10.1.4
 
 dev_dependencies:
   flutter_test:

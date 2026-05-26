@@ -14,7 +14,13 @@ the source of truth — this app makes it pleasant to read on a phone.
 - Swipe through the days with a horizontal date strip.
 - Switch branches from the header at any time.
 - **Browse** every branch's workout for a chosen day.
-- Tap a workout for a full-screen, arm's-length-readable view.
+- **Focus mode** — a huge-type, distraction-free view for reading the WOD
+  at arm's length mid-session. The screen is kept awake while open.
+- **Workout timer** — auto-detects AMRAP / EMOM / Tabata / For Time from
+  the programming and runs a full-screen timer with haptic phase cues.
+- **Training log** — tap DONE on any WOD to log it (optional score and
+  note). The History tab tracks your weekly count and every entry.
+- **Share** — send a formatted WOD to a buddy via the system share sheet.
 - Works offline — the last fetched schedule is cached and shown with an
   "offline" hint.
 

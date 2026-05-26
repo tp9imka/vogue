@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../domain/models/wod.dart';
+import '../../domain/models/wod_key.dart';
+import '../../domain/models/wod_log_entry.dart';
+import '../log/wod_log_cubit.dart';
 import '../theme/program_palette.dart';
 import '../theme/vogue_tokens.dart';
 import '../theme/vogue_typography.dart';
@@ -60,6 +64,25 @@ class WodCard extends StatelessWidget {
                                 color: VogueColors.ink,
                               ),
                             ),
+                          ),
+                          BlocSelector<
+                            WodLogCubit,
+                            Map<String, WodLogEntry>,
+                            bool
+                          >(
+                            selector: (entries) => entries.containsKey(wod.key),
+                            builder: (context, isDone) => isDone
+                                ? const Padding(
+                                    padding: EdgeInsets.only(
+                                      right: VogueSpace.sm,
+                                    ),
+                                    child: Icon(
+                                      Icons.check_circle_rounded,
+                                      size: 20,
+                                      color: VogueColors.primary,
+                                    ),
+                                  )
+                                : const SizedBox.shrink(),
                           ),
                           ProgramBadge(wod.program),
                         ],

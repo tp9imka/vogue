@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import 'data/favorite_branch_store.dart';
+import 'data/wod_log_store.dart';
 import 'domain/wod_repository.dart';
+import 'presentation/log/wod_log_cubit.dart';
 import 'presentation/theme/vogue_theme.dart';
 import 'router.dart';
 
@@ -13,6 +15,7 @@ class VogueApp extends StatefulWidget {
   const VogueApp({
     required this.repository,
     required this.favoriteStore,
+    required this.logStore,
     required this.hasFavorite,
     super.key,
   });
@@ -22,6 +25,9 @@ class VogueApp extends StatefulWidget {
 
   /// Persistence for the favorite branch.
   final FavoriteBranchStore favoriteStore;
+
+  /// Persistence for the training log.
+  final WodLogStore logStore;
 
   /// Whether a favorite branch was already set (decides the start route).
   final bool hasFavorite;
@@ -41,6 +47,7 @@ class _VogueAppState extends State<VogueApp> {
         RepositoryProvider<FavoriteBranchStore>.value(
           value: widget.favoriteStore,
         ),
+        RepositoryProvider<WodLogStore>.value(value: widget.logStore),
       ],
       child: MaterialApp.router(
         title: 'Vogue WOD',
@@ -49,6 +56,12 @@ class _VogueAppState extends State<VogueApp> {
         darkTheme: buildVogueDarkTheme(),
         themeMode: ThemeMode.dark,
         routerConfig: _router,
+        // Wrap every navigated screen with a shared training-log cubit so
+        // marking a WOD done from one screen updates every other.
+        builder: (context, child) => BlocProvider<WodLogCubit>(
+          create: (context) => WodLogCubit(context.read<WodLogStore>())..load(),
+          child: child ?? const SizedBox.shrink(),
+        ),
       ),
     );
   }

@@ -3,11 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vogue_wod/core/result.dart';
 import 'package:vogue_wod/data/favorite_branch_store.dart';
+import 'package:vogue_wod/data/wod_log_store.dart';
 import 'package:vogue_wod/domain/models/branch.dart';
 import 'package:vogue_wod/domain/models/program.dart';
 import 'package:vogue_wod/domain/models/wod.dart';
 import 'package:vogue_wod/domain/models/wod_section.dart';
 import 'package:vogue_wod/domain/wod_repository.dart';
+import 'package:vogue_wod/presentation/log/wod_log_cubit.dart';
 import 'package:vogue_wod/presentation/theme/vogue_theme.dart';
 import 'package:vogue_wod/presentation/today/today_screen.dart';
 
@@ -43,9 +45,12 @@ void main() {
             value: FakeFavoriteBranchStore(),
           ),
         ],
-        child: MaterialApp(
-          theme: buildVogueDarkTheme(),
-          home: const TodayScreen(),
+        child: BlocProvider<WodLogCubit>(
+          create: (_) => WodLogCubit(WodLogStore.inMemory()),
+          child: MaterialApp(
+            theme: buildVogueDarkTheme(),
+            home: const TodayScreen(),
+          ),
         ),
       ),
     );
