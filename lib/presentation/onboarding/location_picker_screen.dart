@@ -30,7 +30,7 @@ class LocationPickerScreen extends StatelessWidget {
           children: [
             const SizedBox(height: VogueSpace.xl),
             const Icon(
-              Icons.bolt_rounded,
+              Icons.location_on_rounded,
               size: 44,
               color: VogueColors.primary,
             ),

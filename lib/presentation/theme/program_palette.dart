@@ -1,53 +1,56 @@
-/// Per-program color coding for the Vogue WOD app.
+/// Per-program color coding.
 ///
-/// Each of the five [Program] types carries its own accent so a member can
-/// identify a workout at a glance. The five hues are mutually distinct and
-/// distinct from the volt-lime brand accent in `VogueColors`.
+/// Each of the five [Program] types carries its own accent so a workout is
+/// identifiable at a glance. The hues are pulled from the brand palette —
+/// blush rose, cinnabar, bone gold, sage, cobalt — and read clearly next to
+/// the brand's primary cinnabar accent.
 ///
 /// Two roles per program:
-/// - [programAccent] — a saturated, high-energy hue for badges, headings and
-///   left-edge bars. Pair with near-black text/icons on top of a filled chip.
-/// - [programSurface] — a soft, dark-tinted background that sits cleanly on
-///   the dark surface ramp; used for badge fills and card wash.
+/// - [programAccent] — the saturated hue for badges, left-edge bars and
+///   headings. Pair with ink (`VogueColors.onSemantic`) on top of a filled
+///   chip — ink clears WCAG AA on every program hue.
+/// - [programSurface] — a faint dark-tinted wash that sits cleanly on the
+///   dark surface ramp; used for card washes and selected-state tints.
 library;
 
 import 'package:flutter/widgets.dart';
-import 'package:vogue_wod/domain/models/program.dart';
+
+import '../../domain/models/program.dart';
 
 /// The saturated accent color for [program].
 ///
-/// VogueFit → orange, Metcon → red, WOD → blue, Speciality → violet,
-/// Stamina → green.
+/// VogueFit → blush rose, Metcon → cinnabar, WOD → bone gold,
+/// Speciality → sage, Stamina → cobalt.
 Color programAccent(Program program) {
   switch (program) {
     case Program.vogueFit:
-      return const Color(0xFFFF6A2B);
+      return const Color(0xFFE5A9A0); // blush rose
     case Program.metcon:
-      return const Color(0xFFF4364C);
+      return const Color(0xFFD85F3C); // cinnabar
     case Program.wod:
-      return const Color(0xFF2E8BFF);
+      return const Color(0xFFE8C77A); // bone gold
     case Program.speciality:
-      return const Color(0xFF9B5CF6);
+      return const Color(0xFFA8B89F); // sage
     case Program.stamina:
-      return const Color(0xFF27C281);
+      return const Color(0xFF6B8CC4); // cobalt
   }
 }
 
-/// A soft, dark-tinted background tuned to [program]'s accent.
+/// A faint, dark-tinted wash tuned to [program]'s accent.
 ///
-/// These sit on the dark surface ramp without glare — use them for badge
-/// fills, card washes and selected-state tints.
+/// Use for card washes, badge fills on dark surfaces, and selected-state
+/// tints — these sit cleanly on the dark surface ramp without glare.
 Color programSurface(Program program) {
   switch (program) {
     case Program.vogueFit:
-      return const Color(0xFF2A1810);
+      return const Color(0xFF281C18);
     case Program.metcon:
-      return const Color(0xFF2C1216);
+      return const Color(0xFF2C1A16);
     case Program.wod:
-      return const Color(0xFF111E2E);
+      return const Color(0xFF2A2118);
     case Program.speciality:
-      return const Color(0xFF1C162C);
+      return const Color(0xFF1C231E);
     case Program.stamina:
-      return const Color(0xFF0F2419);
+      return const Color(0xFF16202C);
   }
 }

@@ -14,9 +14,9 @@ void _showAbout(BuildContext context) {
   showAboutDialog(
     context: context,
     applicationName: 'WOD — Functional Fitness',
-    applicationVersion: '1.2.0',
+    applicationVersion: '2.0.0',
     applicationIcon: const Icon(
-      Icons.bolt_rounded,
+      Icons.assignment_rounded,
       size: 32,
       color: VogueColors.primary,
     ),

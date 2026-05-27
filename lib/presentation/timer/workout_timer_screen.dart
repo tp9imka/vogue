@@ -85,12 +85,8 @@ class _TimerView extends StatelessWidget {
                   const SizedBox(height: VogueSpace.xl),
                   Text(
                     _formatDuration(phase.display),
-                    style: const TextStyle(
-                      fontSize: 96,
-                      fontWeight: FontWeight.w800,
+                    style: VogueTypography.timer.copyWith(
                       color: VogueColors.ink,
-                      fontFeatures: [FontFeature.tabularFigures()],
-                      height: 1,
                     ),
                   ),
                   if (phase.subLabel != null) ...[
