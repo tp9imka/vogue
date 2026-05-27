@@ -28,11 +28,17 @@ How to build and publish Vogue WOD to the App Store and Google Play.
 ### Build
 
 ```bash
-flutter build appbundle --release
+flutter build appbundle --release \
+  --obfuscate --split-debug-info=build/symbols/android
 ```
 
 Output: `build/app/outputs/bundle/release/app-release.aab` — this is what
 you upload to Play.
+
+`--obfuscate` strips Dart symbol names from the binary; the matching
+symbols are written to `build/symbols/android/` so you can decode
+production stack traces later. **Back the `build/symbols/android/` folder
+up alongside the keystore — it is per-build and you cannot regenerate it.**
 
 ### Publish
 
@@ -62,10 +68,12 @@ you upload to Play.
 ### Build
 
 ```bash
-flutter build ipa --release
+flutter build ipa --release \
+  --obfuscate --split-debug-info=build/symbols/ios
 ```
 
-Output: `build/ios/ipa/*.ipa`.
+Output: `build/ios/ipa/*.ipa`. Back up `build/symbols/ios/` per release
+to decode production crash reports.
 
 ### Publish
 
