@@ -207,48 +207,60 @@ class _BranchBar extends StatelessWidget {
         VogueSpace.sm,
         0,
       ),
-      child: Row(
-        children: [
-          Expanded(
-            child: InkWell(
-              onTap: onTap,
-              borderRadius: BorderRadius.circular(VogueRadius.sm),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: VogueSpace.sm,
-                ),
-                child: Row(
-                  children: [
-                    const Icon(
-                      Icons.place_rounded,
-                      size: 18,
-                      color: VogueColors.primary,
-                    ),
-                    const SizedBox(width: VogueSpace.xs),
-                    Flexible(
-                      child: Text(
-                        branchName,
-                        style: VogueTypography.title.copyWith(
-                          color: VogueColors.ink,
+      // Fixed height so the bar does not resize when the TODAY shortcut
+      // appears / disappears (otherwise the date strip and the card list
+      // beneath it jump).
+      child: SizedBox(
+        height: 48,
+        child: Row(
+          children: [
+            Expanded(
+              child: InkWell(
+                onTap: onTap,
+                borderRadius: BorderRadius.circular(VogueRadius.sm),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: VogueSpace.xs,
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.place_rounded,
+                        size: 18,
+                        color: VogueColors.primary,
+                      ),
+                      const SizedBox(width: VogueSpace.xs),
+                      Flexible(
+                        child: Text(
+                          branchName,
+                          overflow: TextOverflow.ellipsis,
+                          style: VogueTypography.title.copyWith(
+                            color: VogueColors.ink,
+                          ),
                         ),
                       ),
-                    ),
-                    const Icon(
-                      Icons.expand_more_rounded,
-                      size: 20,
-                      color: VogueColors.inkMuted,
-                    ),
-                  ],
+                      const Icon(
+                        Icons.expand_more_rounded,
+                        size: 20,
+                        color: VogueColors.inkMuted,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          if (onJumpToToday != null)
-            TextButton(
-              onPressed: onJumpToToday,
-              child: const Text('TODAY'),
-            ),
-        ],
+            // Always reserve space for the TODAY shortcut; render an empty
+            // box (instead of a TextButton) when the selected date already
+            // is today so the action only appears when it has a job.
+            if (onJumpToToday != null)
+              TextButton(
+                onPressed: onJumpToToday,
+                child: const Text('TODAY'),
+              )
+            else
+              const SizedBox.shrink(),
+          ],
+        ),
       ),
     );
   }
