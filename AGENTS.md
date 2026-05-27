@@ -97,6 +97,50 @@ Generated files (`*.g.dart`, `*.freezed.dart`) are excluded.
 
 `flutter analyze` must print `No issues found!` before every commit.
 
+## Secrets and sensitive content
+
+The repo is **public**. Nothing in a tracked file or commit message
+should be something you would not write on a postcard.
+
+**Never commit:**
+
+- **Android signing material** — `android/app/upload-keystore.jks`,
+  `android/key.properties`, any other `*.jks` / `*.keystore`.
+- **iOS signing material** — `*.p12`, `*.mobileprovision`, any
+  exported development or distribution certificate.
+- **Environment files** — `.env`, `.env.*`, anything containing
+  credentials, API keys, or tokens.
+- **Symbols** — `build/symbols/`. They are emitted at release time and
+  must be backed up out-of-band (alongside the keystore), never to git.
+- **Personal data** — real user emails, real names other than what is
+  already in commit metadata, support tickets, payment screenshots, etc.
+
+The repo `.gitignore` covers these paths. Do not add exceptions; if a
+build needs a secret value, source it from a file the `.gitignore`
+lists (locally) or from a CI secret store (in CI).
+
+**Before pushing**, run:
+
+```bash
+bash tool/lint/no_committed_secrets.sh
+```
+
+It is part of `tool/dev/check.sh` and looks for the common shapes
+(plaintext keystore passwords, AWS / Google / OpenAI key prefixes,
+inline PEM private keys, etc.). A clean run prints `OK`.
+
+**If a secret slips through:**
+
+1. **Rotate the value first** — the moment a credential lands on
+   GitHub, treat it as compromised. Generate a new one and update the
+   real configuration.
+2. **Then purge the history** with `git filter-repo` (or BFG). A new
+   commit that just deletes the file does **not** remove it from the
+   history that GitHub already has.
+3. Force-push the cleaned history and notify anyone with a local clone
+   to re-clone. (This is the only situation in which force-pushing
+   `main` is justified.)
+
 ## Testing
 
 **What we test:**

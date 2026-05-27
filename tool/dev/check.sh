@@ -12,4 +12,7 @@ flutter analyze
 echo "== test =="
 flutter test
 
+echo "== secrets =="
+bash tool/lint/no_committed_secrets.sh
+
 echo "ALL GREEN"

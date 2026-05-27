@@ -100,7 +100,7 @@ test/
 The `vogue` repo already exists with `.git` and `README.md`. Scaffold in place:
 
 ```bash
-cd /Users/tp9imka/Sandbox/Projects/vogue
+cd <repo-root>
 flutter create --org com.vfuae --project-name vogue_wod \
   --platforms ios,android --empty .
 ```
