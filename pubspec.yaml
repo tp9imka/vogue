@@ -1,7 +1,7 @@
 name: vogue_wod
 description: "WOD — Functional Fitness. Daily workout viewer for Vogue Fitness UAE branches. Unaffiliated."
 publish_to: 'none'
-version: 1.2.0+3
+version: 2.0.0+4
 
 environment:
   sdk: ^3.11.5
@@ -20,6 +20,7 @@ dependencies:
   go_router: ^16.0.0
   wakelock_plus: ^1.2.8
   share_plus: ^10.1.4
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -36,19 +37,13 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-# App launcher icons — run: dart run flutter_launcher_icons
-flutter_launcher_icons:
-  android: true
-  ios: true
-  image_path: "assets/brand/icon.png"
-  adaptive_icon_background: "#0C0E11"
-  adaptive_icon_foreground: "assets/brand/icon_foreground.png"
-  remove_alpha_ios: true
+# Launcher icons are hand-curated under android/app/src/main/res and
+# ios/Runner/Assets.xcassets — do NOT regenerate them with
+# flutter_launcher_icons (the config below is intentionally removed).
 
-# Native splash screen — run: dart run flutter_native_splash:create
+# Native splash — jet background matches the new brand. Re-run after
+# changing colors or art with: dart run flutter_native_splash:create
 flutter_native_splash:
-  color: "#0C0E11"
-  image: "assets/brand/splash.png"
+  color: "#0A0908"
   android_12:
-    color: "#0C0E11"
-    image: "assets/brand/splash.png"
+    color: "#0A0908"

@@ -1,8 +1,9 @@
-/// `ThemeData` builders for the Vogue WOD app.
+/// `ThemeData` builders.
 ///
-/// Dark is the primary theme — the app is dark-first. A light theme is
-/// provided for completeness / system-setting respect, but the product is
-/// designed and tuned against dark.
+/// Dark is the primary theme — the app currently locks to `ThemeMode.dark`
+/// in `app.dart`. A light theme is provided for completeness; widgets that
+/// still hard-code `VogueColors.surface` / `ink` will read as dark even
+/// under the light theme until they migrate to `Theme.of(context)`.
 ///
 /// These builders wire the token classes (`VogueColors`, `VogueSpace`,
 /// `VogueRadius`, `VogueElevation`) and the `VogueTypography` scale into a
@@ -13,7 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:vogue_wod/presentation/theme/vogue_tokens.dart';
 import 'package:vogue_wod/presentation/theme/vogue_typography.dart';
 
-/// Builds the primary dark theme for the Vogue WOD app.
+/// Builds the primary dark theme.
 ThemeData buildVogueDarkTheme() {
   const colorScheme = ColorScheme.dark(
     primary: VogueColors.primary,
@@ -32,7 +33,7 @@ ThemeData buildVogueDarkTheme() {
     outline: VogueColors.outline,
     outlineVariant: VogueColors.outline,
     error: VogueColors.error,
-    onError: VogueColors.onSemantic,
+    onError: VogueColors.ink,
   );
 
   return _themeFrom(
@@ -44,48 +45,39 @@ ThemeData buildVogueDarkTheme() {
   );
 }
 
-/// Builds a light theme — provided so the app honours a light system
-/// setting. The product is designed dark-first; this is a faithful fallback.
+/// Builds the light theme — paper background, ink type, cinnabar accent.
 ThemeData buildVogueLightTheme() {
-  const surface = Color(0xFFF6F7F9);
-  const surfaceRaised = Color(0xFFFFFFFF);
-  const surfaceHigh = Color(0xFFEDEFF2);
-  const ink = Color(0xFF14171C);
-  const inkMuted = Color(0xFF565E6B);
-  const outline = Color(0xFFD6DAE0);
-
   const colorScheme = ColorScheme.light(
-    primary: VogueColors.primaryDim,
-    onPrimary: VogueColors.onPrimary,
-    primaryContainer: Color(0xFFEAF6C4),
-    onPrimaryContainer: Color(0xFF31420A),
-    secondary: VogueColors.primary,
-    onSecondary: VogueColors.onPrimary,
-    surface: surface,
-    onSurface: ink,
-    surfaceContainerLowest: surface,
-    surfaceContainer: surfaceRaised,
-    surfaceContainerHigh: surfaceHigh,
-    surfaceContainerHighest: surfaceHigh,
-    onSurfaceVariant: inkMuted,
-    outline: outline,
-    outlineVariant: outline,
+    primary: VogueColors.primary,
+    onPrimary: VogueColors.paper,
+    primaryContainer: Color(0xFFFBE3DA),
+    onPrimaryContainer: Color(0xFF3A1F18),
+    secondary: VogueColors.primaryDim,
+    onSecondary: VogueColors.paper,
+    surface: VogueColors.paper,
+    onSurface: VogueColors.inkOnLight,
+    surfaceContainerLowest: VogueColors.paper,
+    surfaceContainer: VogueColors.paperRaised,
+    surfaceContainerHigh: Color(0xFFE5DECC),
+    surfaceContainerHighest: Color(0xFFE5DECC),
+    onSurfaceVariant: VogueColors.inkMutedOnLight,
+    outline: Color(0x1F181410),
+    outlineVariant: Color(0x14181410),
     error: VogueColors.error,
-    onError: VogueColors.onSemantic,
+    onError: VogueColors.paper,
   );
 
   return _themeFrom(
     colorScheme: colorScheme,
     brightness: Brightness.light,
-    scaffoldBackground: surface,
-    primaryText: ink,
-    secondaryText: inkMuted,
+    scaffoldBackground: VogueColors.paper,
+    primaryText: VogueColors.inkOnLight,
+    secondaryText: VogueColors.inkMutedOnLight,
   );
 }
 
 /// Shared assembly: maps a [ColorScheme] plus the token vocabulary into a
-/// fully-wired [ThemeData]. Keeps the two public builders thin and identical
-/// in structure.
+/// fully-wired [ThemeData].
 ThemeData _themeFrom({
   required ColorScheme colorScheme,
   required Brightness brightness,
@@ -101,8 +93,8 @@ ThemeData _themeFrom({
     colorScheme: colorScheme,
     scaffoldBackgroundColor: scaffoldBackground,
     canvasColor: scaffoldBackground,
-    splashColor: colorScheme.primary.withValues(alpha: 0.12),
-    highlightColor: colorScheme.primary.withValues(alpha: 0.08),
+    splashColor: colorScheme.primary.withValues(alpha: 0.10),
+    highlightColor: colorScheme.primary.withValues(alpha: 0.06),
     textTheme: textTheme,
     appBarTheme: AppBarTheme(
       backgroundColor: scaffoldBackground,
