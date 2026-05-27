@@ -50,7 +50,7 @@ class _VogueAppState extends State<VogueApp> {
         RepositoryProvider<WodLogStore>.value(value: widget.logStore),
       ],
       child: MaterialApp.router(
-        title: 'WOD - Functional Fitness',
+        title: 'Vogue WOD Schedule',
         debugShowCheckedModeBanner: false,
         theme: buildVogueLightTheme(),
         darkTheme: buildVogueDarkTheme(),

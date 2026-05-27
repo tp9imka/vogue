@@ -2,7 +2,7 @@
     <!-- The app fetches the WOD schedule from vfuae.com over HTTPS. -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="WOD - Functional Fitness"
+        android:label="Vogue WOD Schedule"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:allowBackup="false"
