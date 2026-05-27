@@ -1,7 +1,7 @@
 name: vogue_wod
-description: "Vogue WOD — daily workout viewer for Vogue Fitness UAE branches."
+description: "WOD — Functional Fitness. Daily workout viewer for Vogue Fitness UAE branches. Unaffiliated."
 publish_to: 'none'
-version: 1.1.0+2
+version: 1.2.0+3
 
 environment:
   sdk: ^3.11.5

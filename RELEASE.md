@@ -1,6 +1,7 @@
 # Release & Publishing Runbook
 
-How to build and publish Vogue WOD to the App Store and Google Play.
+How to build and publish WOD — Functional Fitness to the App Store and
+Google Play.
 
 ## Before any release
 
@@ -62,7 +63,7 @@ up alongside the keystore — it is per-build and you cannot regenerate it.**
 - In Xcode, open `ios/Runner.xcworkspace` → select the `Runner` target →
   **Signing & Capabilities** → set your **Team**. Automatic signing will
   create the certificate and provisioning profile.
-- The bundle identifier is **`com.vfuae.vogueWod`** — register it in the
+- The bundle identifier is **`com.tp9imka.wod`** — register it in the
   Apple Developer portal (or let Xcode register it on first build).
 
 ### Build
@@ -89,13 +90,15 @@ to decode production crash reports.
 
 ## Store listing copy (starting point)
 
-- **Name:** Vogue WOD
-- **Subtitle / short description:** Today's workout for your Vogue Fitness
-  branch.
-- **Description:** Vogue WOD shows the daily workout (WOD) for every Vogue
-  Fitness UAE branch. Pick your home branch once and the app opens straight
-  to today's workout. Swipe through the days, switch branches, browse every
-  location, and read each workout full-screen. Works offline.
+- **Name:** WOD — Functional Fitness
+- **Subtitle / short description:** Daily workouts for Vogue Fitness UAE
+  branches.
+- **Description:** WOD — Functional Fitness shows the daily workout for
+  every Vogue Fitness UAE branch. Pick your home branch once and the app
+  opens straight to today's workout. Swipe through the days, switch
+  branches, browse every location, and read each workout full-screen with
+  a built-in timer (AMRAP / EMOM / Tabata / For Time) and a personal
+  training log. Works offline. Unaffiliated with Vogue Fitness.
 
 ## Important note on rights
 

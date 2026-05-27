@@ -9,7 +9,7 @@ import 'presentation/log/wod_log_cubit.dart';
 import 'presentation/theme/vogue_theme.dart';
 import 'router.dart';
 
-/// The Vogue WOD application root.
+/// The application root.
 class VogueApp extends StatefulWidget {
   /// Creates a [VogueApp] with its dependency graph already built.
   const VogueApp({
@@ -50,7 +50,7 @@ class _VogueAppState extends State<VogueApp> {
         RepositoryProvider<WodLogStore>.value(value: widget.logStore),
       ],
       child: MaterialApp.router(
-        title: 'Vogue WOD',
+        title: 'WOD - Functional Fitness',
         debugShowCheckedModeBanner: false,
         theme: buildVogueLightTheme(),
         darkTheme: buildVogueDarkTheme(),

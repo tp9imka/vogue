@@ -1,4 +1,4 @@
-package com.vfuae.vogue_wod
+package com.tp9imka.wod
 
 import io.flutter.embedding.android.FlutterActivity
 

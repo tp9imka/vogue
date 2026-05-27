@@ -36,8 +36,14 @@ class LocationPickerScreen extends StatelessWidget {
             ),
             const SizedBox(height: VogueSpace.md),
             Text(
-              'Vogue WOD',
+              'WOD',
               style: VogueTypography.display.copyWith(color: VogueColors.ink),
+            ),
+            Text(
+              'Functional Fitness',
+              style: VogueTypography.title.copyWith(
+                color: VogueColors.inkMuted,
+              ),
             ),
             const SizedBox(height: VogueSpace.sm),
             Text(
