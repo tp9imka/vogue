@@ -1,15 +1,16 @@
-# WOD — Functional Fitness
+# Vogue WOD Schedule
 
-A friendly mobile client (Android + iOS) for the daily workout (WOD)
-schedule of the Vogue Fitness UAE gym chain. It shows today's workout
-for your favorite branch the moment you open it.
+An unofficial mobile schedule reader (Android + iOS) for the Vogue
+Fitness UAE gym chain's daily workout (WOD) programming. It shows
+today's workout for your favorite branch the moment you open it.
 
 Built with Flutter. The published schedule at <https://vfuae.com/wod/>
 is the source of truth — this app makes it pleasant to read on a phone.
 
-> **Unaffiliated with Vogue Fitness.** The app reads their public WOD
-> page and re-presents it for personal use. All workout content is the
-> work of their coaches.
+> **Not affiliated with, or endorsed by, Vogue Fitness.** The app reads
+> their public WOD page and re-presents it; the name is used
+> descriptively to identify *whose schedule* you are viewing, not to
+> suggest endorsement. All workout content is the work of their coaches.
 
 ## What it does
 

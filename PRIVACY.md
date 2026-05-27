@@ -1,8 +1,9 @@
-# Privacy Policy — WOD - Functional Fitness
+# Privacy Policy — Vogue WOD Schedule
 
 _Last updated: 2026-05-27_
 
-WOD - Functional Fitness ("the app") is a workout-schedule viewer. This policy explains
+Vogue WOD Schedule ("the app") is an unofficial workout-schedule reader
+for Vogue Fitness UAE. This policy explains
 what the app does and does not do with data. It is written to be honest
 and simple because the app is simple.
 

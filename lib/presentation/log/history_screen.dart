@@ -13,8 +13,8 @@ import 'wod_log_cubit.dart';
 void _showAbout(BuildContext context) {
   showAboutDialog(
     context: context,
-    applicationName: 'WOD — Functional Fitness',
-    applicationVersion: '2.0.0',
+    applicationName: 'Vogue WOD Schedule',
+    applicationVersion: '2.1.0',
     applicationIcon: const Icon(
       Icons.assignment_rounded,
       size: 32,
@@ -23,15 +23,15 @@ void _showAbout(BuildContext context) {
     children: [
       const SizedBox(height: VogueSpace.md),
       Text(
-        'A daily WOD viewer for Vogue Fitness UAE branches. The '
-        'schedule is fetched from the public page at vfuae.com and '
+        'An unofficial schedule reader for Vogue Fitness UAE branches. '
+        'The schedule is fetched from the public page at vfuae.com and '
         'parsed on your device.',
         style: VogueTypography.body.copyWith(color: VogueColors.inkMuted),
       ),
       const SizedBox(height: VogueSpace.md),
       Text(
-        'Unaffiliated with Vogue Fitness. All workout content is the '
-        'work of their coaches.',
+        'Not affiliated with, or endorsed by, Vogue Fitness. '
+        'All workout content is the work of their coaches.',
         style: VogueTypography.label.copyWith(color: VogueColors.inkFaint),
       ),
     ],

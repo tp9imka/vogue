@@ -1,6 +1,6 @@
 # Release & Publishing Runbook
 
-How to build and publish WOD — Functional Fitness to the App Store and
+How to build and publish Vogue WOD Schedule to the App Store and
 Google Play.
 
 ## Before any release
@@ -90,15 +90,17 @@ to decode production crash reports.
 
 ## Store listing copy (starting point)
 
-- **Name:** WOD — Functional Fitness
-- **Subtitle / short description:** Daily workouts for Vogue Fitness UAE
-  branches.
-- **Description:** WOD — Functional Fitness shows the daily workout for
-  every Vogue Fitness UAE branch. Pick your home branch once and the app
-  opens straight to today's workout. Swipe through the days, switch
-  branches, browse every location, and read each workout full-screen with
-  a built-in timer (AMRAP / EMOM / Tabata / For Time) and a personal
-  training log. Works offline. Unaffiliated with Vogue Fitness.
+- **Name:** Vogue WOD Schedule
+- **Subtitle / short description:** Unofficial daily-workout reader for
+  Vogue Fitness UAE.
+- **Description:** Vogue WOD Schedule is an unofficial reader for the
+  daily workouts (WODs) posted by Vogue Fitness UAE. Pick your home
+  branch once and the app opens straight to today's workout. Swipe
+  through the days, switch branches, browse every location, and read
+  each workout full-screen with a built-in timer (AMRAP / EMOM / Tabata
+  / For Time) and a personal training log. Works offline. Not affiliated
+  with, or endorsed by, Vogue Fitness — the brand name is used
+  descriptively to identify whose schedule is shown.
 
 ## Important note on rights
 
