@@ -1,3 +1,9 @@
+---
+layout: default
+title: Privacy Policy — Vogue WOD Schedule
+permalink: /privacy/
+---
+
 # Privacy Policy — Vogue WOD Schedule
 
 _Last updated: 2026-05-27_
@@ -6,10 +12,6 @@ Vogue WOD Schedule ("the app") is an unofficial workout-schedule reader
 for Vogue Fitness UAE. This policy explains what the app does and does
 not do with data. It is written to be honest and simple because the app
 is simple.
-
-> The canonical public version of this policy is published at
-> <https://tp9imka.github.io/vogue/privacy/> and the source lives in
-> `docs/privacy.md`. Keep this file in sync.
 
 ## The short version
 
@@ -49,9 +51,9 @@ policies, not this one.
 The app contains **no** third-party SDKs for analytics, advertising,
 crash reporting, or tracking.
 
-The app uses **Google Fonts** to download two display typefaces (Bodoni
-Moda, Inter, JetBrains Mono) on first launch and caches them on your
-device. This fetch is a routine HTTPS request and is governed by
+The app uses **Google Fonts** to download two display typefaces
+(Bodoni Moda, Inter, JetBrains Mono) on first launch and caches them on
+your device. This fetch is a routine HTTPS request and is governed by
 [Google Fonts' privacy notice](https://developers.google.com/fonts/faq/privacy).
 
 ## Children

@@ -1,0 +1,13 @@
+title: Vogue WOD Schedule
+description: Unofficial daily-workout schedule reader for Vogue Fitness UAE.
+theme: jekyll-theme-minimal
+show_downloads: false
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - privacy.md
+exclude:
+  - README.md
