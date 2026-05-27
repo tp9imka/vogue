@@ -10,6 +10,34 @@ import '../widgets/app_states.dart';
 import '../widgets/program_badge.dart';
 import 'wod_log_cubit.dart';
 
+void _showAbout(BuildContext context) {
+  showAboutDialog(
+    context: context,
+    applicationName: 'WOD — Functional Fitness',
+    applicationVersion: '1.2.0',
+    applicationIcon: const Icon(
+      Icons.bolt_rounded,
+      size: 32,
+      color: VogueColors.primary,
+    ),
+    children: [
+      const SizedBox(height: VogueSpace.md),
+      Text(
+        'A daily WOD viewer for Vogue Fitness UAE branches. The '
+        'schedule is fetched from the public page at vfuae.com and '
+        'parsed on your device.',
+        style: VogueTypography.body.copyWith(color: VogueColors.inkMuted),
+      ),
+      const SizedBox(height: VogueSpace.md),
+      Text(
+        'Unaffiliated with Vogue Fitness. All workout content is the '
+        'work of their coaches.',
+        style: VogueTypography.label.copyWith(color: VogueColors.inkFaint),
+      ),
+    ],
+  );
+}
+
 /// The History tab — every WOD the user has marked done.
 class HistoryScreen extends StatelessWidget {
   /// Creates a [HistoryScreen].
@@ -18,7 +46,16 @@ class HistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('History')),
+      appBar: AppBar(
+        title: const Text('History'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.info_outline_rounded),
+            tooltip: 'About',
+            onPressed: () => _showAbout(context),
+          ),
+        ],
+      ),
       body: BlocBuilder<WodLogCubit, Map<String, WodLogEntry>>(
         builder: (context, entries) {
           if (entries.isEmpty) {

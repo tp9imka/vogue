@@ -1,8 +1,8 @@
-# Vogue WOD — Design System
+# Design System
 
-A working reference for the Vogue WOD app design system. Vogue Fitness is a
-CrossFit box: the visual language is **bold, energetic, high-contrast and
-dark-first**. The app's job is to let a member glance at their phone
+A working reference for the app's design system. The audience is a
+functional-fitness / CrossFit box: the visual language is **bold,
+energetic, high-contrast and dark-first**. The app's job is to let a member glance at their phone
 before/during a session and instantly read today's workout.
 
 All tokens live in `lib/presentation/theme/`. Feature code references tokens

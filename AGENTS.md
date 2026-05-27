@@ -1,4 +1,4 @@
-# AGENTS.md — conventions for the Vogue WOD app
+# AGENTS.md — conventions for the WOD app
 
 Conventions every contributor (human or LLM) follows. Adapted from the x4
 project's guidelines, slimmed to fit a small, read-only Flutter app.
