@@ -43,14 +43,71 @@ up alongside the keystore — it is per-build and you cannot regenerate it.**
 
 ### Publish
 
-1. Play Console → create the app → upload the `.aab`.
-2. Complete the store listing: title, short & full description, screenshots
-   (phone, and optionally tablet), feature graphic (1024×500), app icon.
-3. Fill the **Data Safety** form — this app collects no data (see
-   `PRIVACY.md`).
-4. Complete the content-rating questionnaire.
-5. Provide the **Privacy Policy URL** (host `PRIVACY.md` somewhere public).
-6. Roll out to a testing track first, then production.
+1. Play Console → create the app → upload the `.aab` to **Internal
+   Testing** first (no review, instant distribution to up to 100
+   testers).
+2. Complete the store listing using the assets below.
+3. Fill every left-sidebar section (data safety, content rating,
+   target audience, etc.) using the pre-canned answers below.
+4. **The 14-day rule.** As of 2024, new Personal developer accounts
+   must run **Closed Testing with 20+ testers for ≥ 14 days** before
+   applying for production access. Recruit testers via the Closed
+   Testing opt-in URL early.
+5. After the 14-day window: **Setup → App access → Apply for
+   production access**. Google reviews ~1-3 days. After approval, the
+   Production track unlocks and you can roll out.
+
+### Feature graphic
+
+Required by Play; not by Apple. 1024×500 PNG, brand-styled. Regenerate
+after any text / icon change:
+
+```bash
+bash tool/generate_feature_graphic.sh
+# -> assets/brand/feature_graphic.png
+```
+
+Editable in `tool/feature_graphic.html` (HTML + real Google Fonts,
+rendered headless Chrome).
+
+### Screenshots — Play-ready
+
+Play rejects screenshots taller than **2:1** (longest ÷ shortest).
+Modern iPhone shots at 1284×2778 are 2.16:1, just over. Pad them with
+jet `#0A0908` to 1389×2778 (exactly 2:1):
+
+```bash
+for f in screens/1284x2778/IMG_*.PNG; do
+  sips --padToHeightWidth 2778 1389 --padColor 0A0908 "$f" \
+    --out "screens/play/$(basename "$f")"
+done
+```
+
+The padded `.PNG`s under `screens/play/` are the ones you drag into
+Play Console.
+
+### Pre-canned answers for the policy questionnaires
+
+| Section | Answer |
+|---|---|
+| **App information → Category** | Health & Fitness |
+| **Data safety → Data collection / sharing** | None — answer "No" to every category |
+| **Content rating** | Answer "No" / "None" to every question → result **Everyone / PEGI 3** |
+| **Target audience and content → Age group** | 18+ (or 13+ if you want broader reach); tick "App not designed for children" |
+| **Ads** | No |
+| **News apps** | No |
+| **Government apps** | No |
+| **COVID-19 contact tracing** | No |
+| **Financial features** | None |
+| **Health features** | None — the app is a schedule reader, not a health-data collector |
+| **Privacy Policy URL** | `https://tp9imka.github.io/vogue/privacy/` |
+| **Contact website (optional)** | `https://tp9imka.github.io/vogue/` |
+
+### App access (if Play asks for credentials)
+
+Same as the iOS App Review notes: no sign-in required, the app opens
+on first launch and asks you to pick a branch. Tick **"All
+functionality in our app is available without any special access"**.
 
 ## iOS — App Store
 

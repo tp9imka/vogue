@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1024px; height: 500px; overflow: hidden; }
+  body {
+    background: #0A0908;
+    color: #F1E9D8;
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .left { padding: 0 56px; display: flex; flex-direction: column; gap: 12px; }
+  .eyebrow {
+    color: #D85F3C;
+    font: 700 14px/1.2 'Inter', sans-serif;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+  }
+  .rule {
+    width: 56px; height: 4px;
+    background: #D85F3C;
+    margin: 6px 0 12px;
+  }
+  .title {
+    color: #F1E9D8;
+    font: italic 900 88px/0.92 'Bodoni Moda', 'Didot', serif;
+    letter-spacing: -2.5px;
+  }
+  .subtitle {
+    color: #F1E9D8;
+    font: italic 400 36px/1 'Bodoni Moda', 'Didot', serif;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+  }
+  .tagline {
+    color: rgba(241,233,216,0.62);
+    font: 400 17px/1.45 'Inter', sans-serif;
+    margin-top: 14px;
+    max-width: 460px;
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .right img {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    border-radius: 28px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="eyebrow">Unofficial · vfuae.com</div>
+    <div class="rule"></div>
+    <div class="title">Vogue WOD</div>
+    <div class="subtitle">Schedule</div>
+    <div class="tagline">Today's workout for every Vogue Fitness UAE branch.</div>
+  </div>
+  <div class="right">
+    <img src="../assets/brand/icon_source.png" alt="">
+  </div>
+</body>
+</html>
