@@ -1,7 +1,7 @@
 name: vogue_wod
 description: "Vogue WOD Schedule. Unofficial daily-workout reader for Vogue Fitness UAE branches."
 publish_to: 'none'
-version: 2.1.0+5
+version: 2.1.0+6
 
 environment:
   sdk: ^3.11.5
